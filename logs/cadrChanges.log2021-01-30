@@ -1,0 +1,413 @@
+
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#organization1" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#Organization" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasImpactModel": "http://ontology.eil.utoronto.ca/cids/cadr#impactmeasurement1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#useOfFunds": "" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasID": "http://ontology.eil.utoronto.ca/cids/cadr#organizationid1" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasTelephone": "http://ontology.eil.utoronto.ca/cids/cadr#phonenumber1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasContact": "http://ontology.eil.utoronto.ca/cids/cadr#person2" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasAddress": "http://ontology.eil.utoronto.ca/cids/cadr#address1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasLegalName": "Test Organization 1" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 16:53:24.747060" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#organizationid1" ,
+ "@type": "http://ontology.eil.utoronto.ca/tove/organization#OrganizationID" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#organization1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasIdentifier": "TestOrg1" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 16:53:24.747497" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#address1" ,
+ "@type": "http://ontology.eil.utoronto.ca/tove/icontact#Address" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasPostalCode": "" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasUnitNumber": "" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasStreetNumber": "" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasCityS": "" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasStreet": "" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 16:53:24.747950" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#phonenumber1" ,
+ "@type": "http://ontology.eil.utoronto.ca/tove/icontact#PhoneNumber" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasPhoneNumber": "111-111-1111" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 16:53:24.748357" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#person2" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#Person" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasTelephone": "http://ontology.eil.utoronto.ca/cids/cadr#phonenumber2" ,
+ "http://xmlns.com/foaf/0.1/familyName": "Trump" ,
+ "http://xmlns.com/foaf/0.1/givenName": "" ,
+ "http://ontology.eil.utoronto.ca/cids/cidsrep#hasEmail": "" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 16:53:24.748794" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#phonenumber2" ,
+ "@type": "http://ontology.eil.utoronto.ca/tove/icontact#PhoneNumber" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasPhoneNumber": "111-222-3333" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 16:53:24.749139" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#impactmeasurement1" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#ImpactMeasurement" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasName": "Test Org 1 Impact Measurement Model" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasStakeholder": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholder1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#organization1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "Test Org1 impact Model" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasIndicator": "http://ontology.eil.utoronto.ca/cids/cadr#indicator1" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 16:53:24.752743" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#organization1" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#Organization" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#useOfFunds": "" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasLegalName": "Test Organization 1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasID": "http://ontology.eil.utoronto.ca/cids/cadr#organizationid1" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasTelephone": "http://ontology.eil.utoronto.ca/cids/cadr#phonenumber1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasContact": "http://ontology.eil.utoronto.ca/cids/cadr#person2" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasAddress": "http://ontology.eil.utoronto.ca/cids/cadr#address1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasImpactModel": "http://ontology.eil.utoronto.ca/cids/cadr#impactmeasurement1" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 17:27:13.457757" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#organizationid1" ,
+ "@type": "http://ontology.eil.utoronto.ca/tove/organization#OrganizationID" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#organization1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasIdentifier": "TestOrg1" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 17:27:13.458182" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#address1" ,
+ "@type": "http://ontology.eil.utoronto.ca/tove/icontact#Address" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasStreetNumber": "" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasCityS": "" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasStreet": "" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasPostalCode": "" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasUnitNumber": "" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 17:27:13.458616" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#phonenumber1" ,
+ "@type": "http://ontology.eil.utoronto.ca/tove/icontact#PhoneNumber" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasPhoneNumber": "111-111-1111" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 17:27:13.459102" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#person2" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#Person" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasTelephone": "http://ontology.eil.utoronto.ca/cids/cadr#phonenumber2" ,
+ "http://xmlns.com/foaf/0.1/givenName": "" ,
+ "http://xmlns.com/foaf/0.1/familyName": "Trump" ,
+ "http://ontology.eil.utoronto.ca/cids/cidsrep#hasEmail": "" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 17:27:13.459632" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#phonenumber2" ,
+ "@type": "http://ontology.eil.utoronto.ca/tove/icontact#PhoneNumber" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasPhoneNumber": "111-222-3333" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 17:27:13.460043" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#impactmeasurement1" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#ImpactMeasurement" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "Test Org1 impact Model" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasName": "Test Org 1 Impact Measurement Model" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasIndicator": "http://ontology.eil.utoronto.ca/cids/cadr#indicator1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasStakeholder": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholder1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#organization1" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 17:27:13.466699" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#organization1" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#Organization" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasID": "http://ontology.eil.utoronto.ca/cids/cadr#organizationid1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#useOfFunds": "" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasContact": "http://ontology.eil.utoronto.ca/cids/cadr#person2" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasLegalName": "Test Organization 1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasImpactModel": "http://ontology.eil.utoronto.ca/cids/cadr#impactmeasurement1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasTelephone": "http://ontology.eil.utoronto.ca/cids/cadr#phonenumber1" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasAddress": "http://ontology.eil.utoronto.ca/cids/cadr#address1" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 17:36:23.208179" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#organizationid1" ,
+ "@type": "http://ontology.eil.utoronto.ca/tove/organization#OrganizationID" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#organization1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasIdentifier": "TestOrg1" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 17:36:23.208553" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#address1" ,
+ "@type": "http://ontology.eil.utoronto.ca/tove/icontact#Address" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasPostalCode": "" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasUnitNumber": "" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasStreetNumber": "" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasCityS": "" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasStreet": "" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 17:36:23.208927" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#phonenumber1" ,
+ "@type": "http://ontology.eil.utoronto.ca/tove/icontact#PhoneNumber" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasPhoneNumber": "111-111-1111" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 17:36:23.209240" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#person2" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#Person" ,
+ "http://xmlns.com/foaf/0.1/givenName": "" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasTelephone": "http://ontology.eil.utoronto.ca/cids/cadr#phonenumber2" ,
+ "http://ontology.eil.utoronto.ca/cids/cidsrep#hasEmail": "" ,
+ "http://xmlns.com/foaf/0.1/familyName": "Trump" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 17:36:23.209583" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#phonenumber2" ,
+ "@type": "http://ontology.eil.utoronto.ca/tove/icontact#PhoneNumber" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasPhoneNumber": "111-222-3333" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 17:36:23.209950" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#impactmeasurement1" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#ImpactMeasurement" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasIndicator": "http://ontology.eil.utoronto.ca/cids/cadr#indicator1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasStakeholder": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholder1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasName": "Test Org 1 Impact Measurement Model" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#organization1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "Test Org1 impact Model" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 17:36:23.213504" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#organization1" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#Organization" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasID": "http://ontology.eil.utoronto.ca/cids/cadr#organizationid1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#useOfFunds": "" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasContact": "http://ontology.eil.utoronto.ca/cids/cadr#person2" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasLegalName": "Test Organization 1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasImpactModel": "http://ontology.eil.utoronto.ca/cids/cadr#impactmeasurement1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasTelephone": "http://ontology.eil.utoronto.ca/cids/cadr#phonenumber1" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasAddress": "http://ontology.eil.utoronto.ca/cids/cadr#address1" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 23:05:41.129730" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#organizationid1" ,
+ "@type": "http://ontology.eil.utoronto.ca/tove/organization#OrganizationID" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#organization1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasIdentifier": "TestOrg1" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 23:05:41.130099" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#address1" ,
+ "@type": "http://ontology.eil.utoronto.ca/tove/icontact#Address" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasPostalCode": "" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasUnitNumber": "" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasStreetNumber": "" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasCityS": "" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasStreet": "" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 23:05:41.130718" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#phonenumber1" ,
+ "@type": "http://ontology.eil.utoronto.ca/tove/icontact#PhoneNumber" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasPhoneNumber": "111-111-1111" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 23:05:41.131232" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#person2" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#Person" ,
+ "http://xmlns.com/foaf/0.1/givenName": "" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasTelephone": "http://ontology.eil.utoronto.ca/cids/cadr#phonenumber2" ,
+ "http://ontology.eil.utoronto.ca/cids/cidsrep#hasEmail": "" ,
+ "http://xmlns.com/foaf/0.1/familyName": "Trump" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 23:05:41.131691" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#phonenumber2" ,
+ "@type": "http://ontology.eil.utoronto.ca/tove/icontact#PhoneNumber" ,
+ "http://ontology.eil.utoronto.ca/tove/icontact#hasPhoneNumber": "111-222-3333" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 23:05:41.131999" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#impactmeasurement1" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#ImpactMeasurement" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasIndicator": "http://ontology.eil.utoronto.ca/cids/cadr#indicator1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasStakeholder": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholder1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasName": "Test Org 1 Impact Measurement Model" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#organization1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "Test Org1 impact Model" ,
+ "<http://purl.org/dc/terms/modified>": "2021-01-30 23:05:41.132348" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "msf@eil.utoronto.ca" ,
+ "<http://purl.org/dc/terms/description": "Update Organization"
+}

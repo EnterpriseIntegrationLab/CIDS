@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Common Approach Repository User Select Page</title>
+{% endblock %}
+  
+{% block body %}
+<center><h1>Common Approach Repository<br> User Select</h1></center>
+
+<center><b style="color:red;">{{ message }}</b></center>
+
+<FORM action="{{path}}" method="POST">
+	<input type="hidden" name="action" value="{{ action }}">
+	
+  {% if userType == superUser %}
+     <label for="hasEmail">Please eneter the email address of the User you wish to edit or delete:</label>
+     <input type="email" name="hasEmail" id="hasEmail" value= {{ hasEmailValue }}>
+  {% else %}
+    <label for="userIRI">Please select the User you wish to edit or delete:</label>
+    <select name="userIRI" id="userIRI" size=1">
+      {% for user in users %}
+        <option value= "{{user.iri}}" > {{user.hasEmail}} {% if user.forPerson %} [{{user.forPerson.familyName}}, {{user.forPerson.givenName}}] {% endif %} </option>
+      {% endfor %}
+    </select>
+  {% endif %}
+<p><INPUT type="submit" value="Submit"> 
+</form>
+{% endblock %}

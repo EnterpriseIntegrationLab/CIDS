@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Common Approach Repository Stakeholder Characteristic Page</title>
+{% endblock %}
+  
+{% block body %}
+<center><h1>Common Approach Repository<br> Stakeholder Characteristic Select</h1></center>
+
+<center><b style="color:red;">{{ message }}</b></center>
+
+{% if impactModel.hasCharacteristic %}
+<FORM action="{{path}}" method="POST">
+
+  <input type="hidden" name="action" id="action" value="{{action}}">
+
+    <label for="stkcIRI">Please select the Stakeholder Characteristic you wish to access:</label>
+    <select name="stkcIRI" id="stkcIRI" size=1 required>
+      {% for stkc in impactModel.hasCharacteristic %}
+        <option value= "{{stkc.iri}}" > {{stkc.hasName}} </option>
+      {% endfor %}
+    </select>
+
+  <p><INPUT type="submit" value="Submit"> 
+</form>
+
+{% else %}
+<p>No Stakeholder Characteristics defined for this Impact Model<p>
+{% endif %}
+
+{% endblock %}

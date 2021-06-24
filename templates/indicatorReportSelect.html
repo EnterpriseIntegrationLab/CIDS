@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Common Approach Repository Indicator Report Select Page</title>
+{% endblock %}
+  
+{% block body %}
+<center><h1>Common Approach Repository<br> Indicator Report Select</h1></center>
+
+<center><b style="color:red;">{{ message }}</b></center>
+
+<FORM action={{ path }} method="POST">
+	<input type="hidden" name="action" value="{{ action }}">
+	
+    <label for="irIRI">Please select an Impact Report you wish to edit/delete/display:</label>
+    <select name="irIRI" id="irIRI" size=1>
+      {% for ir in impactModel.hasIndicatorReport %}
+        <option value= "{{ ir.iri }}" > {{ ir.hasName }} </option>
+      {% endfor %}
+    </select>
+  <p><INPUT type="submit" value="Submit"> 
+</form>
+
+{% endblock %}

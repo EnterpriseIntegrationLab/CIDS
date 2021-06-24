@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Common Approach Repository JSON-LD Load Page</title>
+{% endblock %}
+  
+{% block body %}
+<center><h1>Common Approach Repository<br> JSON-LD Load</h1></center>
+
+<center><b style="color:red;">{{ message }}</b></center>
+
+<p>This page loads Common Impact Data Standard data using the JSON-LD format. The extension for the file to be loaded must be ".json-ld". 
+The file will be loaded for the Organization that the user is associated with.<p>
+
+<FORM action={{ path }} method="POST" enctype="multipart/form-data"">
+	<label for="file">Please enter the JSON-LD file name you wish to load:</label><br>
+	<INPUT type="file" accept=".json-ld, .txt" name="file" id="file" size=40  value={{ fileValue }}>
+<p><INPUT type="submit" value="Upload"> 
+</FORM>
+{% endblock %}

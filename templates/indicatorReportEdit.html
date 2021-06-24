@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Common Approach Repository Indicator Report Add/Update Page</title>
+{% endblock %}
+  
+{% block body %}
+<center><h1>Common Approach Repository<br> Indicator Report Add/Update</h1></center>
+
+<center><b style="color:red;">{{ message }}</b></center>
+
+{% if action == "display" %} 
+	{% set readonlyall = "readonly" %}
+	{% set readonly = "readonly" %}  
+{% else %}
+	{% set readonlyall = "" %}
+{% endif %}
+
+{% if action != "display" %}
+<p>
+<FORM action= {{ path }} method="POST">
+
+	<input type="hidden" name="action" id="action" value="{{action}}">
+	<input type="hidden" name="irIRI" id="irIRI" value="{{priorValue['irIRI']}}">
+{% endif %}
+
+    <table border=0>
+    	 <tr>
+        	<td><span title="Please provide a title for this report to make it easy to recognize."><b>Name:<b></span></td>
+        	<td><input type="text" name="hasName" id="hasName" size=30 required value="{{priorValue['hasName']}}" {{ readonlyall }}></td>
+        </tr>
+        
+        <tr><td style="padding-top: 10px;"></td></tr>
+        <tr>
+          <td><span title="The indicator that is the focus of this report."><b>Indicator:</b></span>
+          <td><select name="forIndicator" id="forIndicator" required {{readonlyall}}>
+           		{% for ind in impactModel.hasIndicator %}
+           			<option value="{{ind.iri}}" {{readonlyall}}>{{ind.hasName}}</option>
+           		{% endfor %}
+              </select>
+		</tr>
+		
+		<tr><td style="padding-top: 10px;"></td></tr>
+		<tr>
+		  <td><label for="hasValue"><span title="Value of the indicator."><b>Value:</b> </span></label></td>
+		  <td><input type="text" name="hasValue" id="hasValue" required value="{{priorValue['hasValue']}}" {{ readonlyall }}></td>
+		</tr>
+		
+		<tr><td style="padding-top: 10px;"></td></tr>
+		<tr>
+		  <td><label for="hasStartDate"><span title="State Date of the time period for which the indicator report spans."> <b>State Date:</b></span></label></td>
+		  <td><input type="date" name="hasStartDate" id="hasStartDate" required value="{{priorValue['hasStartDate']}}" {{ readonlyall }}></td>
+        </tr>
+        
+        <tr><td style="padding-top: 10px;"></td></tr>
+        <tr>
+          <td><label for="hasEndDate"><span title="End Date of the time period for which the indicator report spans."> <b>End Date:</b> </span></label></td>
+          <td><input type="date" name="hasEndDate" id="hasEndDate" required value="{{priorValue['hasEndDate']}}" {{ readonlyall }}></td>
+        </tr>
+		
+		<tr><td style="padding-top: 10px;"></td></tr>
+		<tr>
+		  <td><b>Indicator Comment:</b></td>
+		  <td colspan="4"><textarea name="hasComment" id="hasComment" cols="60" rows="4" {{ readonlyall }}> {{priorValue['hasComment']}} </textarea></td>
+		</tr>
+        
+    </table>
+    
+<p>
+{% if action != "display" %}
+    <INPUT type="submit" value="Submit"> 
+</FORM>
+{% endif %}
+
+{% endblock %}

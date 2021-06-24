@@ -1,0 +1,7 @@
+<http://utoronto.ca/mf> <http://schema.org/url> <http://manu.sporny.org/> .
+<http://utoronto.ca/mf> <http://schema.org/image> <http://manu.sporny.org/images/manu.png> .
+<http://utoronto.ca/mm> <http://schema.org/url> <http://manu.sporny.org/> .
+<http://utoronto.ca/mm> <http://schema.org/image> <http://manu.sporny.org/images/manu.png> .
+<http://utoronto.ca/mm> <http://schema.org/name> "Marlene" .
+<http://utoronto.ca/mf> <http://schema.org/name> "Manu Sporny" .
+

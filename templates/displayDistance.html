@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Common Approach Repository Indicator Similarity</title>
+{% endblock %}
+
+{% block body %}
+<center><h1>Common Approach Repository<br> Indicator Similarity</h1>
+
+<center><b style="color:red;">{{ message }}</b></center>
+<p>
+
+<b>Distance of the following text to all indicator descriptions:<b><p>
+"{{ query }}"
+<p>
+
+  <table border=1>
+   <tr><th>Indicator Name</th><th>Indicator Description</th><th>Distance</th></tr>
+    {% for name, iri, desc, dist in result %}
+      <tr><td><span title="{{ iri }}">{{ name }}</span></td>{{desc}}</td><td>{{dist}}</td><tr>
+    {% endfor %}
+  </table>
+    
+</center>
+{% endblock %}

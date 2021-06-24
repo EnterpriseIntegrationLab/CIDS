@@ -1,0 +1,236 @@
+
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholder2" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#Stakeholder" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasName": "stk3" ,
+ "http://ontology.eil.utoronto.ca/ISO21972/iso21972#located_in": "http://ontology.eil.utoronto.ca/cids/cidsrep#locall" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#socialpurposeorganization1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "stk3" ,
+ "<http://purl.org/dc/terms/modified>": "2021-02-16 13:15:37.063983" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "user@test.org" ,
+ "<http://purl.org/dc/terms/description": "Update Stakeholder"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#impactmeasurement1" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#ImpactMeasurement" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasStakeholder": [ "http://ontology.eil.utoronto.ca/cids/cadr#stakeholder1" ,"http://ontology.eil.utoronto.ca/cids/cadr#stakeholder2" ] ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasName": "Test Org 1 Impact Measurement Model" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "Test Org1 impact Model" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#socialpurposeorganization1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasIndicator": "http://ontology.eil.utoronto.ca/cids/cadr#indicator1" ,
+ "<http://purl.org/dc/terms/modified>": "2021-02-16 13:15:37.064240" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "user@test.org" ,
+ "<http://purl.org/dc/terms/description": "Update Stakeholder"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholdercharacteristic1" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#StakeholderCharacteristic" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasIdentifier": "c1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasName": "stk char1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasSpecification": "http://example.com/1" ,
+ "http://schema.org/codeValue": "False" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#socialpurposeorganization1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#forStakeholder": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholder1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "cd" ,
+ "<http://purl.org/dc/terms/modified>": "2021-02-16 14:50:36.967203" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "user@test.org" ,
+ "<http://purl.org/dc/terms/description": "Update Stakeholder Characteristic"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholder1" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#Stakeholder" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasName": "Stakeholder 1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasCharacteristic": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholdercharacteristic1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#socialpurposeorganization1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "Stakeholder 1 for Org 1" ,
+ "http://ontology.eil.utoronto.ca/ISO21972/iso21972#located_in": "http://ontology.eil.utoronto.ca/cids/cidsrep#locall" ,
+ "<http://purl.org/dc/terms/modified>": "2021-02-16 14:50:36.967669" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "user@test.org" ,
+ "<http://purl.org/dc/terms/description": "Update Stakeholder Characteristic"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#impactmeasurement1" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#ImpactMeasurement" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasName": "Test Org 1 Impact Measurement Model" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasCharacteristic": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholdercharacteristic1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#socialpurposeorganization1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasStakeholder": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholder1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasIndicator": "http://ontology.eil.utoronto.ca/cids/cadr#indicator1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "Test Org1 impact Model" ,
+ "<http://purl.org/dc/terms/modified>": "2021-02-16 14:50:36.967917" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "user@test.org" ,
+ "<http://purl.org/dc/terms/description": "Update Stakeholder Characteristic"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholdercharacteristic1" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#StakeholderCharacteristic" ,
+ "http://schema.org/codeValue": "False" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#socialpurposeorganization1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasSpecification": "http://example.com/1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "cd1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#forStakeholder": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholder1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasIdentifier": "c1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasName": "stk char1" ,
+ "<http://purl.org/dc/terms/modified>": "2021-02-16 15:05:10.757079" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "user@test.org" ,
+ "<http://purl.org/dc/terms/description": "Update Stakeholder Characteristic"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholder1" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#Stakeholder" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#socialpurposeorganization1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasCharacteristic": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholdercharacteristic1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "Stakeholder 1 for Org 1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasName": "Stakeholder 1" ,
+ "http://ontology.eil.utoronto.ca/ISO21972/iso21972#located_in": "http://ontology.eil.utoronto.ca/cids/cidsrep#locall" ,
+ "<http://purl.org/dc/terms/modified>": "2021-02-16 15:05:10.757365" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "user@test.org" ,
+ "<http://purl.org/dc/terms/description": "Update Stakeholder Characteristic"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#impactmeasurement1" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#ImpactMeasurement" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#socialpurposeorganization1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasCharacteristic": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholdercharacteristic1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasStakeholder": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholder1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "Test Org1 impact Model" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasIndicator": "http://ontology.eil.utoronto.ca/cids/cadr#indicator1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasName": "Test Org 1 Impact Measurement Model" ,
+ "<http://purl.org/dc/terms/modified>": "2021-02-16 15:05:10.757590" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "user@test.org" ,
+ "<http://purl.org/dc/terms/description": "Update Stakeholder Characteristic"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholdercharacteristic2" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#StakeholderCharacteristic" ,
+ "http://schema.org/codeValue": "False" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#socialpurposeorganization1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasSpecification": "http://example.com/1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "fsafds" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#forStakeholder": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholder1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasIdentifier": "c2" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasName": "second stk char" ,
+ "<http://purl.org/dc/terms/modified>": "2021-02-16 15:07:24.177686" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "user@test.org" ,
+ "<http://purl.org/dc/terms/description": "Update Stakeholder Characteristic"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholder1" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#Stakeholder" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#socialpurposeorganization1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasCharacteristic": [ "http://ontology.eil.utoronto.ca/cids/cadr#stakeholdercharacteristic1" ,"http://ontology.eil.utoronto.ca/cids/cadr#stakeholdercharacteristic2" ] ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "Stakeholder 1 for Org 1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasName": "Stakeholder 1" ,
+ "http://ontology.eil.utoronto.ca/ISO21972/iso21972#located_in": "http://ontology.eil.utoronto.ca/cids/cidsrep#locall" ,
+ "<http://purl.org/dc/terms/modified>": "2021-02-16 15:07:24.177930" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "user@test.org" ,
+ "<http://purl.org/dc/terms/description": "Update Stakeholder Characteristic"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#impactmeasurement1" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#ImpactMeasurement" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#socialpurposeorganization1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasCharacteristic": [ "http://ontology.eil.utoronto.ca/cids/cadr#stakeholdercharacteristic1" ,"http://ontology.eil.utoronto.ca/cids/cadr#stakeholdercharacteristic2" ] ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasStakeholder": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholder1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "Test Org1 impact Model" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasIndicator": "http://ontology.eil.utoronto.ca/cids/cadr#indicator1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasName": "Test Org 1 Impact Measurement Model" ,
+ "<http://purl.org/dc/terms/modified>": "2021-02-16 15:07:24.178158" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "user@test.org" ,
+ "<http://purl.org/dc/terms/description": "Update Stakeholder Characteristic"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholdercharacteristic1" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#StakeholderCharacteristic" ,
+ "http://schema.org/codeValue": "True" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#socialpurposeorganization1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasSpecification": "http://example.com/1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "cd1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#forStakeholder": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholder1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasIdentifier": "c2" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasName": "stk char1" ,
+ "<http://purl.org/dc/terms/modified>": "2021-02-16 16:43:04.843458" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "user@test.org" ,
+ "<http://purl.org/dc/terms/description": "Update Stakeholder Characteristic"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholder1" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#Stakeholder" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#socialpurposeorganization1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasCharacteristic": [ "http://ontology.eil.utoronto.ca/cids/cadr#stakeholdercharacteristic1" ,"http://ontology.eil.utoronto.ca/cids/cadr#stakeholdercharacteristic2" ] ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "Stakeholder 1 for Org 1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasName": "Stakeholder 1" ,
+ "http://ontology.eil.utoronto.ca/ISO21972/iso21972#located_in": "http://ontology.eil.utoronto.ca/cids/cidsrep#locall" ,
+ "<http://purl.org/dc/terms/modified>": "2021-02-16 16:43:04.843696" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "user@test.org" ,
+ "<http://purl.org/dc/terms/description": "Update Stakeholder Characteristic"
+}
+
+{ "@context : 
+ { "xsd": "http://www.w3.org/2001/XMLSchema#", 
+"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+"rdfs": "http://www.w3.org/2000/01/rdf-schema#" } ,
+ "@id": "http://ontology.eil.utoronto.ca/cids/cadr#impactmeasurement1" ,
+ "@type": "http://ontology.eil.utoronto.ca/cids/cids#ImpactMeasurement" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#forOrganization": "http://ontology.eil.utoronto.ca/cids/cadr#socialpurposeorganization1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasCharacteristic": [ "http://ontology.eil.utoronto.ca/cids/cadr#stakeholdercharacteristic1" ,"http://ontology.eil.utoronto.ca/cids/cadr#stakeholdercharacteristic2" ] ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasStakeholder": "http://ontology.eil.utoronto.ca/cids/cadr#stakeholder1" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasDescription": "Test Org1 impact Model" ,
+ "http://ontology.eil.utoronto.ca/cids/cids#hasIndicator": "http://ontology.eil.utoronto.ca/cids/cadr#indicator1" ,
+ "http://ontology.eil.utoronto.ca/tove/organization#hasName": "Test Org 1 Impact Measurement Model" ,
+ "<http://purl.org/dc/terms/modified>": "2021-02-16 16:43:04.843912" ,
+ "<http://ontology.eil.utoronto.ca/cids/cids#modifiedBy>": "user@test.org" ,
+ "<http://purl.org/dc/terms/description": "Update Stakeholder Characteristic"
+}

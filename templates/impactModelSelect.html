@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Common Approach Repository Editor Configuration Page</title>
+{% endblock %}
+  
+{% block body %}
+<center><h1>Common Approach Repository<br>Editor Configuration</h1></center>
+
+<center><b style="color:red;">{{ message }}</b></center>
+
+
+<p><h2>Select Impact Model for {{ organization.hasID.hasIdentifier }}</h2><p>
+<FORM action="{{ path }}" method="POST">
+	<input type="hidden" name="action" value="{{action}}">
+	
+    <label for="imIRI">Please select an Impact Model:</label>
+    <select name="imIRI" id="imIRI" size=3 required>
+      {% for im in organization.hasImpactModel %}
+        <option value= "{{im.iri}}" > <span title="{{im.hasDescription}}">{{ im.hasName }} </span></option>
+      {% endfor %}
+    </select>
+  <p><INPUT type="submit" value="Submit"> 
+</form>
+{% endblock %}
+

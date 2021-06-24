@@ -1,0 +1,36 @@
+[{
+  "@context": {
+    "name": "http://schema.org/name",
+    "image": {
+      "@id": "http://schema.org/image",
+      "@type": "@id"
+    },
+    "homepage": {
+      "@id": "http://schema.org/url",
+      "@type": "@id"
+    }
+  },
+  "@id" : "http://utoronto.ca/mf" ,
+  "@type" : 
+  "name": "Manu Sporny",
+  "homepage": "http://manu.sporny.org/",
+  "image": "http://manu.sporny.org/images/manu.png"
+} ,
+
+{
+  "@context": {
+    "name": "http://schema.org/name",
+    "image": {
+      "@id": "http://schema.org/image",
+      "@type": "@id"
+    },
+    "homepage": {
+      "@id": "http://schema.org/url",
+      "@type": "@id"
+    }
+  },
+  "@id" : "http://utoronto.ca/mm" ,
+  "name": "Marlene",
+  "homepage": "http://manu.sporny.org/",
+  "image": "http://manu.sporny.org/images/manu.png"
+}]

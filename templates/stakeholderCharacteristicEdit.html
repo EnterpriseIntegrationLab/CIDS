@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Common Approach Repository Stakeholder Characteristic Add/Edit Page</title>
+{% endblock %}
+  
+{% block body %}
+<center><h1>Common Approach Repository<br> Stakeholder Characteristic Add/Edit</h1></center>
+
+
+{% if action == "display" %} 
+	{% set readonlyall = "readonly" %}
+	{% set readonly = "readonly" %}
+	<center><b style="color:red;">{{ message }}</b></center><p>  
+{% else %}
+	{% set readonlyall = "" %}
+{% endif %}
+
+{% if action != "display" %}
+<FORM action="http://localhost:5000/UpdateStakeholderCharacteristic" method="POST">
+
+	<input type="hidden" name="action" id="action" value="{{action}}">
+	<input type="hidden" name="stkcIRI" id="stkcIRI" value="{{priorValue['stkcIRI']}}">
+	
+{% endif %}
+
+    <table border=0>
+    	<tr>
+    		<td><label for="hasStakeholder"><b><span title="Select Stakeholder the characteristic applies to.">Stakeholder:</span></b></label></td>
+    		<td><select name="forStakeholder" id="forStakeholder" size=1 {{ readonlyall }} value="{{priorValue['forStakeholder']}}">
+    			{% for stk in impactModel.hasStakeholder %}
+    				 <option value="{{stk.iri}}" {% if priorValue['forStakeholder'] == stk.iri %}selected{% endif %}>{{stk.hasName}}</option>
+    			{% endfor %}
+    	</tr>
+    	
+    	<tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+        	<td><label for="hasSpecification"><b><span title="IRI of an existing specification of this characteristic.">Specification IRI:</span></b></label></td>
+        	<td>	<INPUT type="URL" name="hasSpecification" id="hasSpecification" size=60  {{ readonly }} value="{{priorValue['hasSpecification']}}"></td>
+        	</td>
+        </tr>
+        
+    	<tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+        	<td><label for="hasName"><b><span title="Specifies the name or title of the characteristic.">Characteristic Name:</span></b></label></td>
+        	<td><INPUT type="text" name="hasName" id="hasName" size=60  {{ readonly }} required value="{{priorValue['hasName']}}"></td>
+        	</td>
+        </tr>
+        
+    	<tr><td  style="padding-top: 10px;"></td></tr>
+          <tr>
+            <td valign="top"><label for="hasDescription"><span title="Specifies the description of the characteristic."> <b>Characteristic Description:</b></span> </label></td>
+        	<td><textarea name="hasDescription" id="hasDescription" rows="4" cols="60" {{ readonlyall }}>{{priorValue['hasDescription']}}</textarea></td>
+        </tr>
+        
+        <tr><td  style="padding-top: 10px;"></td></tr>
+          <tr>
+            <td valign="top"><label for="hasIdentifier"><span title="Specifies the code for the characteristic."> <b>Characteristic Identifier (Code):</b></span> </label></td>
+        	<td><INPUT type="text" name="hasIdentifier" id="hasIdentifier" rows="4" cols="60" {{ readonlyall }} value="{{priorValue['hasIdentifier']}}"></td>
+        </tr>
+        
+       <tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+        	<td><label for="codeValue"><b><span title="The Boolean value for whether the Stakeholder has characteristic.">Stakeholder has characteristic: </span></b></label></td>
+        	<td><INPUT type="checkbox" name="codeValue" id="codeValue" size=60  {{ readonly }} value="Yes" {% if priorValue['codeValue'] == "Yes" %} checked {% endif %}></td>
+        	</td>
+        </tr>
+        
+    </table><p>
+{% if action != "display" %}
+    <INPUT type="submit" value="Submit"> 
+</FORM>
+{% endif %}
+
+{% endblock %}

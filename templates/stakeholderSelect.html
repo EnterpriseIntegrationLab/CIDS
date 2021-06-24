@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Common Approach Repository User Select Page</title>
+{% endblock %}
+  
+{% block body %}
+<center><h1>Common Approach Repository<br> Stakeholder Select</h1></center>
+
+<center><b style="color:red;">{{ message }}</b></center>
+
+<FORM action="{{path}}" method="POST">
+
+  <input type="hidden" name="action" id="action" value="{{action}}">
+
+    <label for="stkIRI">Please select the Stakeholder you wish to access:</label>
+    <select name="stkIRI" id="stkIRI" size=1 required>
+      {% for stk in stakeholders %}
+        <option value= "{{stk.iri}}" > {{stk.hasName}} </option>
+      {% endfor %}
+    </select>
+
+  <p><INPUT type="submit" value="Submit"> 
+</form>
+
+{% endblock %}

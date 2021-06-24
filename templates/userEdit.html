@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Common Approach Repository Add/Edit User Page</title>
+{% endblock %}
+  
+{% block body %}
+<center><h1>Common Approach Repository<br> Add/Edit User</h1></center>
+
+<center><b style="color:red;">{{ message }}</b></center>
+
+{% if action == "display" %} 
+	{% set readonlyall = "readonly" %}
+	{% set readonly = "readonly" %}  
+{% else %}
+	{% set readonlyall = "" %}
+{% endif %}
+
+{% if action != "display" %}
+<h2>Register User</h2>
+<FORM action="{{path}}" method="POST">
+	<input type="hidden" id="action" name="action" value="{{action}}">
+	<input type="hidden" id="userIRI" name="userIRI" value="{{priorValue['userIRI']}}">
+{% endif %}
+  
+    <table border=0>
+        
+        <tr><td><b><span title="User to whom you are providing editing rights for the organization.">User Name:</span></b>
+        	    <label for="givenName">First Name:</label>
+        		<INPUT type="text" name="givenName" id="givenName" size=40 required {{ readonlyall }} value="{{priorValue['givenName']}}">
+        		<label for="familyName">Last Name:</label>
+        		<INPUT type="text" name="familyName" id="familyName" size=40 required {{ readonlyall }}  value="{{priorValue['familyName']}}">
+        </tr>
+        <tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+        	<td><label for="hasEmail"><b>Email:</b></label>
+        		<INPUT type="email" name="hasEmail" id="hasEmail" size=40 required {{ readonlyall }}   value="{{priorValue['hasEmail']}}">
+        	</td>
+        </tr>
+        <tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+          <td>
+          	<label for="hasPassword"><b><span title="Password to be used by user when logging in.">Password:</span></b> </label>
+        	<INPUT type="password" name="hasPassword" id="hasPassword" size=20 required {{ readonlyall }}  value="{{priorValue['hasPassword']}}"><BR>
+          </td>
+        </tr>
+        
+        <tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+        	<td>
+        		<label for="hasPhoneNumber"><b>Phone Number:</b></label>
+        		<INPUT type="tel" name="hasPhoneNumber" id="hasPhoneNumber" size=30 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="nnn-nnn-nnnn" 
+        				required {{ readonlyall }}  value="{{priorValue['hasPhoneNumber']}}">
+        	</td>
+        </tr>
+        <tr><td  style="padding-top: 10px;"></td></tr>
+        
+        <tr>
+        	<td>
+        		<label for="userType"><span title="Select the type of user you are adding."><b>User Type</b></span></label>
+        		<select name="userType" id="userType" size=1 required {{ readonlyall }}  value="{{priorValue['userType']}}">
+        		  <option value="admin">Administrator (can perform all functions for their designated organization)</option>
+        		  <option value="researcher">Researcher (can only perform analysis functions)</option>
+        		  <option value="editor">Editor (can add/remove/edit all information for the organization, except for users)</option>
+        		  <option value="reporter">Reporter (can add/remove/edit Indicator and Outcome Reports only)</option>
+        		</select>
+        	</td>
+        </tr>
+    </table><p>
+{% if action != "display" %} 
+    <INPUT type="submit" value="Submit"> 
+</FORM>
+{% endif %}
+
+{% endblock %}

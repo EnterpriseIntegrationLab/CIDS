@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--  the stylesheet did not work
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+     		 padding: 2px 2px 2px 15px;
+  -->
+
+  <style>
+	body {
+		font-family: "Lato", sans-serif;
+	}
+	
+	select {
+		background-color: #D9E1F2 ;
+	}
+	
+	option {
+		background-color: #D9E1F2 ;
+	}
+	
+	input[type=text], input[type=tel], input[type=email], textarea {
+		background-color: #FFF2CC ;
+	}
+	
+	input[type=number] {
+		background-color: #E2EFDA ;
+	}
+	
+	input[type=date] {
+		background-color: #FAE4D6 ;
+	}
+		
+	input:read-only, input[type=text]:read-only, input[type=number]:read-only, input[type=date]:read-only, textarea:read-only, select:read-only {
+		background-color: white ;
+		user-select: none;
+		disabled = True;
+	}
+	
+	input:invalid, textbox:invalid {
+  		border: 2px solid pink;
+	}
+
+	input:valid {
+  		border: 2px solid gray;
+	}
+	
+	.sidenav {
+  		height: 100%;
+  		width: 300px;
+  		position: fixed;
+  		z-index: 1;
+  		top: 0;
+  		left: 0;
+  		background-color: #3B917D;
+  		overflow-x: hidden;
+  		padding-top: 10px;
+		}
+
+	.sidenav a {
+	    padding: 2px 2px 2px 2px;
+  		text-decoration: none;
+  		font-size: 12px;
+  		color: blue;
+
+	}
+
+	.sidenav a:hover {
+  		color: #f1f1f1;
+	}
+
+	.main {
+  		margin-left: 300px; /* Same as the width of the sidenav */
+	}
+
+	@media screen and (max-height: 450px) {
+  		.sidenav {padding-top: 15px;}
+  		.sidenav a {font-size: 18px;}
+	}
+  </style>
+
+	
+    {% block head %}
+    {% endblock %}
+  </head>
+  
+  <body>
+    <div class="sidenav">
+    	<img src="static/CAlogo2.png" align="center" height="91" width="300"/><p>
+    	{% if userType == superUser %}
+    	<b>Superuser Functions</b><br>
+    	&nbsp; Organization <br>&nbsp; <a href="http://localhost:5000/AddOrganization">Add</a> | <a href="http://localhost:5000/SelectOrganization?action=edit">Edit</a> | <a href="http://localhost:5000/SelectOrganization?action=delete">Delete</a> <br>
+    	&nbsp; <span title="Save all instances into a RDF/XML file.">Backup Instances</span><a href="http://localhost:5000/DumpInstances">Backup</a> <br>
+    	<hr>
+    	{% endif %}
+    	{% if (userType == superUser) or  (userType == adminUser) %}
+    	<b>Administrator Functions</b><br>
+    	&nbsp; User <br>&nbsp; <a href="http://localhost:5000/AddUser">Add</a> | <a href="http://localhost:5000/SelectUser?action=edit">Edit</a> | <a href="http://localhost:5000/SelectUser?action=edit">Delete</a> | <a href="http://localhost:5000/SelectUser?action=display">Display</a> <p>
+    	<hr style="height: 4px;background-color: black;">
+    	{% endif %}
+    	{% if (userType == superUser) or  (userType == adminUser) or (userType == editorUser) %}
+    	
+    	<b>Editor Functions</b><p>
+    	<i>Who, What, How Much, Contrib, Risk:</i><br>
+  		&nbsp; Impact <br>&nbsp; <a href="#">Add</a> | <a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Display</a><p>
+  		&nbsp; Impact Model <br>&nbsp; <a href="http://localhost:5000/AddImpactModel">Add</a> | <a href="http://localhost:5000/SelectImpactModel?action=edit">Edit</a> | <a href="http://localhost:5000/SelectImpactModel?action=delete">Delete</a> | <a href="http://localhost:5000/SelectImpactModel?action=display">Display</a> <p>
+  		&nbsp; Impact Risk <br>&nbsp; <a href="#">Add</a> | <a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Display</a> <p>
+  		&nbsp; Indicator <br>&nbsp; <a href="http://localhost:5000/AddIndicator">Add</a> | <a href="http://localhost:5000/SelectIndicator?action=edit">Edit</a> | <a href="http://localhost:5000/SelectIndicator?action=delete">Delete</a> | <a href="http://localhost:5000/SelectIndicator?action=display">Display</a> <p>
+  		&nbsp; Organization <br>&nbsp; <a href="http://localhost:5000/EditOrganization?action=edit">Edit</a> | <a href="http://localhost:5000/EditOrganization?action=display"">Display</a><p>
+  		&nbsp; Outcome <br>&nbsp; <a href="http://localhost:5000/AddOutcome">Add</a> | <a href="http://localhost:5000/SelectOutcome?action=edit">Edit</a> | <a href="http://localhost:5000/SelectOutcome?action=delete">Delete</a> | <a href="http://localhost:5000/SelectOutcome?action=display">Display</a> <p>
+  		&nbsp; Stakeholder <br>&nbsp; <a href="http://localhost:5000/AddStakeholder">Add</a> | <a href="http://localhost:5000/SelectStakeholder?action=edit">Edit</a> | <a href="http://localhost:5000/SelectStakeholder?action=delete">Delete</a> | <a href="http://localhost:5000/SelectStakeholder?action=display">Display</a><p>
+  		&nbsp; Stakeholder Characteristic<br>&nbsp; <a href="http://localhost:5000/AddStakeholderCharacteristic">Add</a> | <a href="http://localhost:5000/SelectStakeholderCharacteristic?action=edit">Edit</a> | <a href="http://localhost:5000/SelectStakeholderCharacteristic?action=delete">Delete</a> | <a href="http://localhost:5000/SelectStakeholderCharacteristic?action=display">Display</a><p>	
+  		&nbsp; Stakeholder Outcome<br>&nbsp; <a href="#">Add</a> | <a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Display</a> <p>
+  		<p><hr>
+  		
+  		<i>How (not available):</i><br>
+  		&nbsp; Program <br>&nbsp; <a href="#">Add</a> | <a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Display</a> <p>
+  		&nbsp; Service <br>&nbsp; <a href="#">Add</a> | <a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Display</a> <p>
+  		&nbsp; Activity <br>&nbsp; <a href="#">Add</a>|<a href="#">Edit</a>|<a href="#">Delete</a> | <a href="#">Display</a> <p>
+  		&nbsp; Input <br>&nbsp; <a href="#">Add</a> | <a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Display</a> <p>
+  		&nbsp; Output <br>&nbsp; <a href="#">Add</a> | <a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Display</a> <p>
+  		<hr>
+  		
+  		&nbsp; Load JSON-LD <a href="http://localhost:5000/RequestLoadJSONLD">Load</a>
+  		<p><hr style="height: 4px;background-color: black;">
+  		
+  		<b>Reporting Functions</b><br>
+  		&nbsp; Impact Report <br>&nbsp; <a href="http://localhost:5000/AddImpactReport">Add</a> | <a href="http://localhost:5000/SelectImpactReport?action=edit">Edit</a> | <a href="http://localhost:5000/SelectImpactReport?action=delete">Delete</a> | <a href="http://localhost:5000/SelectImpactReport?action=display">Display</a> <p>
+  		&nbsp; Indicator Report <br>&nbsp; <a href="http://localhost:5000/AddIndicatorReport">Add</a> | <a href="http://localhost:5000/SelectIndicatorReport?action=edit">Edit</a> | <a href="http://localhost:5000/SelectIndicatorReport?action=delete">Delete</a> | <a href="http://localhost:5000/SelectIndicatorReport?action=display">Display</a><p>
+  		<p><hr style="height: 4px;background-color: black;">
+  		{% endif %}
+  		
+  		<b>Research Functions</b><br>
+  		&nbsp; Similar Indicators <br>&nbsp; <a href="http://localhost:5000/SimilarIndicator">Find</a> 
+  		<p><hr><hr>
+  		&nbsp; <a href="http://localhost:5000/Logout">Logout</a> <p>
+      <ul>
+        <li>User: {% if user %}{{ user.forPerson.familyName }}, {{user.forPerson.givenName }} {% else %} None {% endif %}
+        <li>Organization = {% if organization %} {{ organization.hasID.hasIdentifier }} {% else %} None {% endif %}
+        <li>Impact Model: {% if impactModel %}{{ impactModel.hasName }} {% else %} None {% endif %}
+        <li>Action: {{ action }}
+      </ul>
+	</div>
+
+	<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+	<div class="main">
+		
+    	{% block body %}
+    	{% endblock %}
+    </div>
+
+  </body>
+
+</html>

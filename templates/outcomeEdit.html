@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Common Approach Repository Outcome Add/Update Page</title>
+{% endblock %}
+  
+{% block body %}
+<center><h1>Common Approach Repository<br> Outcome Add/Update</h1></center>
+
+
+{% if action == "display" %} 
+	{% set readonlyall = "readonly" %}
+	{% set readonly = "readonly" %}  
+	<center><b style="color:red;">{{ message }}</b></center><p>
+{% elif userType != superUser %}
+	{% set readonlyall = "" %}
+	{% set readonly = "readonly" %}
+{% else %}
+	{% set readonlyall = "" %}
+	{% set readonly = "" %}
+{% endif %}
+
+{% if action != "display" %}
+<FORM action="{{path}}" method="POST">
+
+	<input type="hidden" name="action" id="action" value="{{action}}">
+	<input type="hidden" name="outIRI" id="action" value="{{outIRI}}">
+
+{% endif %}	
+
+    <table border=0>
+
+        <tr>
+        	<td><label for="hasName"><b><span title="Short title for Outcome. One to five words. This will be used to uniquely identify the Ourcome.">Outcome Name:</span></b></label></td>
+        	<td colspan=2>	<INPUT type="text" name="hasName" id="hasName" size=60 required {{ readonlyall }} value="{{priorValue['hasName']}}"></td>
+        </tr>
+        
+    	<tr><td  style="padding-top: 10px;"></td></tr>
+          <tr>
+            <td valign="top"><label for="hasDescription"> <b>Description:</b> </label></td>
+        	<td colspan=2><textarea name="hasDescription" id="hasDescription" rows="4" cols="60" {{ readonlyall }}>{{priorValue['hasDescription']}}</textarea></td>
+        </tr>
+        <tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+        	<td><label for="forDomain"><span title="Domain is broad area of outcome. Examples of domains include The United Nation's Sustainable Development Goals (SDGs) and IRIS+ Strategic Goals."><b>Domain:</b></span></label>
+        	<td colspan=2><select name="forDomain" id="forDomain" size=5 multiple {{ readonlyall }}>
+      		  	{% for iri, desc in domains %}
+        			<option value= "{{ iri }}" {{ readonlyall }} 
+        			{% if iri in selectedDomains %}
+        				selected
+        			{% endif %}
+        			> {{ desc }} </option>
+      			{% endfor %}
+    		   </select>
+    		</td>
+        </tr>
+        
+        <!-- identify the stakeholders affected by the outcome -->
+        
+    {% if stknames %}
+        <tr><td  style="padding-top: 10px;"></td></tr>
+          	{% for stkname, stknameIri, imp, impVal, ser, serVal in stknames %}
+          	  <tr>
+        	    <td><label for="{{stkname}}"><span title="Stakeholder affected by the Outcome."><b>Stakeholder:</b></span></label>
+        	    <td colspan=2><select name="{{stkname}}" id="{{stkname}}" size=1 {{ readonlyall }}>
+        	    	    <option value="">None</option>
+        			  {% for stk in impactModel.hasStakeholder %}
+        			    <option value= "{{stk.iri}}" 
+        			      {% if stk.iri == stknameIri %} selected {% endif %}
+        			    > {{ stk.hasName }} </option>
+      			      {% endfor %}
+    		        </select>
+    		        <label for="{{imp}}"><span title="The stakeholder's view of whether the outcome they experience is important (relative to other outcomes)."><b>Importance:</b></span></label>
+    		        <select name="{{imp}}" id="{{imp}}" size=1 {{ readonlyall }}>
+    		          <option value=""></option>
+    		          <option value="Very Important" {% if impVal == "Very Important" %} selected {% endif %}> Very Important</option>
+    		          <option value="Important" {% if impVal == "Important" %} selected {% endif %}> Important</option>
+    		          <option value="Neutral" {% if impVal == "Neutral" %} selected {% endif %}> Neutral</option>
+    		          <option value="Unimportant" {% if impVal == "Unimportant" %} selected {% endif %}> Unimportant</option>
+    		        </select>
+    		         <label for="{{ser}}"><span title="How underserved is the Stakholder in relation to the outcomes delivered by enterprises?"><b>Underserved?:</b></span></label>
+    		        <select name="{{ser}}" id="{{ser}}" size=1 {{ readonlyall }}>
+    		          <option value=""></option>
+    		          <option value="Yes" {% if serVal == "Yes" %} selected {% endif %}> Yes</option>
+    		          <option value="No" {% if serVal == "No" %} selected {% endif %}> No</option>
+    		        </select>
+    		      </td>
+    		    </td>
+			  </tr>
+			{% endfor %}
+		{% endif %}
+			
+	{% for riskType, riskLikelihood, riskDescription in risks %}
+	
+	    <tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+          <td><span title="{{riskType.definition[0]}}"><b>{{riskType.label[0]}}:</b></span></td>
+          <td><label for="{{riskLikelihood}}"><b>Likelihood: </b></label></td>
+          <td><select name = "{{riskLikelihood}}" id="{{riskLikelihood}}" size=1 {{ readonlyall }}>
+          	  <option value=""></option>
+          	  <option value="highRisk" {% if priorValue[riskLikelihood] == "highRisk" %} selected{% endif %}> High Risk</option>
+          	  <option value="mediumRisk"{% if priorValue[riskLikelihood] == "mediumRisk" %} selected{% endif %}> Medium Risk</option>
+          	  <option value="lowRisk" {% if priorValue[riskLikelihood] == "lowRisk" %} selected{% endif %}> Low Risk</option>
+          	</select>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td valign="top"><label for="{{riskDescription}}"><b>Description: </b></label></td>
+          <td><textarea type=textarea name="{{riskDescription}}" id="{{riskDescription}}" rows="4" cols="60" {{ readonlyall }}>{{ priorValue[riskDescription]}}</textarea></td>		
+        </tr>
+	
+	{% endfor %}
+        
+ 
+    </table><p>
+{% if action != "display" %}
+    <INPUT type="submit" value="Submit"> 
+</FORM>
+{% endif %}
+
+{% endblock %}

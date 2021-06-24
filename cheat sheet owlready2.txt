@@ -1,0 +1,66 @@
+OwlReady2 Cheat Sheet
+
+CLASS
+
+#  creating a subclass dynamically
+with config.cadr :	# this specifies the namespace
+	undom = types.new_class("UNSDGGoal1", (config.cids.Outcome,))
+	
+# get superclass of a class or property
+<property/class>.is_a		superclasses
+
+# Indirect taxonomy
+Individual.INDIRECT_is_a / Individual.INDIRECT_is_instance_of
+
+<class>.instances()			- returns all instances of a class
+
+isinstance(obj1, obj2)
+
+<instance>.get_properties()		# returns the properties of an individual
+
+# ----------------- PROPERTY ----------------------------------------
+# return values of property based on transitive closure
+<obj>.INDIRECT_<prop> : returns the the values of a property based on transitivity, symmetry, etc.
+or
+<obj>.<prop>.indirect()
+
+
+# get value of property when class and property are variables
+getattr(object, property) : returns the values of the property of object
+
+setattr(object, property, value)
+
+<class>.get_class_properties() - returns set of properties for a class
+
+<property/class>.descendants()	- returns the sub properties of a property
+
+# If property appears in more than one ontology, then to assign to the correct property use
+prop[instance] =  value
+e.g., Shelter.hasBuilding[s1] = [b1]
+
+
+# searching for subproperties of a property
+config.cadr.search(subproperty_of=config.cids.hasAcquired)
+
+# get property chain
+Prop.get_property_chain()
+propChain.properties returns list of properties for a PropertyChain
+
+PropertyChain is a class
+
+issubclass(obj1, obj2)
+
+
+
+Attributes of Properties
+"_domain"
+"_range"
+"_property_chain"
+"_inverse_property"
+"_python_name"
+
+# ---------------------------------------
+# jinja2 tips
+
+# testing length of array
+#   {% if stakeholders |length >0 %}

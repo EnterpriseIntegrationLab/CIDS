@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Common Approach Repository Impact Report Select Page</title>
+{% endblock %}
+  
+{% block body %}
+<center><h1>Common Approach Repository<br> Impact Report Select</h1></center>
+
+<center><b style="color:red;">{{ message }}</b></center>
+
+<FORM action={{ path }} method="POST">
+	<input type="hidden" name="action" value="{{ action }}">
+	
+    <label for="irIRI">Please select an Impact Report you wish to edit/delete/display:</label>
+    <select name="irIRI" id="irIRI" size=1>
+      {% for ir in impactModel.hasImpactReport %}
+        <option value= "{{ ir.iri }}" > {{ ir.name }} [ {{convertDTDtoYMD(ir.hasTimeInterval.hasBeginning)}}, {{convertDTDtoYMD(ir.hasTimeInterval.hasEnd)}}] </option>
+      {% endfor %}
+    </select>
+  <p><INPUT type="submit" value="Submit"> 
+</form>
+
+{% endblock %}

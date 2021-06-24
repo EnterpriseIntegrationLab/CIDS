@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Common Approach Repository Outcome Select Page</title>
+{% endblock %}
+  
+{% block body %}
+<center><h1>Common Approach Repository<br>Outcome Select</h1></center>
+
+<center><b style="color:red;">{{ message }}</b></center>
+
+<FORM action={{ path }} method="POST">
+	<input type="hidden" name="action" value="{{action}}">
+
+	
+    <label for="outIRI">Please select an Outcome:</label>
+    <select name="outIRI" id="outIRI" size=1>
+      {% for out in impactModel.hasOutcome %}
+        <option value= "{{out.iri}}" > {{out.hasName}} </option>
+      {% endfor %}
+    </select>
+  <p><INPUT type="submit" value="Submit"> 
+</form>
+
+{%if action == "compare" %}
+<p> Or<p>
+<FORM action={{ path }} method="POST">
+	<input type="hidden" name="action" value="{{action}}">
+	
+    <label for="compareText">Enter the text you wish to find similar outcomes :</label>
+    <input type=text size="80" id="compareText" name="compareText">
+  <p><INPUT type="submit" value="Submit"> 
+</form>
+{% endif %}
+{% endblock %}

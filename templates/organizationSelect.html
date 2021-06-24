@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Common Approach Repository Superuser Organization Select Page</title>
+{% endblock %}
+  
+{% block body %}
+<center><h1>Common Approach Repository<br> Organization Select</h1></center>
+
+<center><b style="color:red;">{{ message }}</b></center>
+
+<FORM action={{ path }} method="POST">
+	<input type="hidden" name="action" value="{{action}}">
+    <label for="orgIRI">Please select the Organization you wish to delete:</label>
+    <select name="orgIRI" id="orgIRI" size=1 required>
+      {% for org in cadr.search(type=cids.Organization) %}
+        <option value= "{{org.iri}}" > {{org.hasID.hasIdentifier}} [{{org.hasLegalName}}] </option>
+      {% endfor %}
+    </select>
+  <p><INPUT type="submit" value="Submit"> 
+</form>
+
+{% endblock %}

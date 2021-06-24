@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Common Approach Repository Indicator Add/Update Page</title>
+{% endblock %}
+  
+{% block body %}
+<center><h1>Common Approach Repository<br> Indicator Add/Update</h1></center>
+
+<center><b style="color:red;">{{ message }}</b></center>
+
+{% if action == "display" %} 
+	{% set readonlyall = "readonly" %}
+	{% set readonly = "readonly" %}  
+{% else %}
+	{% set readonlyall = "" %}
+{% endif %}
+
+{% if action != "display" %}
+
+<FORM action= {{ path }} method="POST">
+
+	<input type="hidden" name="action" id="action" value="{{action}}">
+	<input type="hidden" name="indIRI" id="indIRI" value="{{priorValue['indIRI']}}">
+{% endif %}
+
+    <table border=0>
+
+        <tr>
+        	<td><label for="hasName"><b><span title="Short title for Indicator. One to five words.">Indicator Title:</span></b></label></td>
+        	<td>	<INPUT type="text" name="hasName" id="hasName" size=60 {{ readonlyall }} required value="{{priorValue['hasName']}}"></td>
+        </tr>
+    	<tr><td  style="padding-top: 10px;"></td></tr>
+          <tr>
+            <td valign="top"><label for="hasDescription"> <b>Description:</b> </label></td>
+        	<td><textarea name="hasDescription" id="hasDescription" rows="4" cols="60" {{ readonlyall }} required>{{ priorValue['hasDescription']}}</textarea></td>
+        </tr>
+        <tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+        	<td><label for="hasBaseline"><span title="Baseline describes the existing condition before interventions. It is used for comparison purposes. Baseline data can be measured, or estimated using other datasets. It should be expressed using the same units as the indicator."><b>Baseline:</b></span></label>
+        	<td><INPUT type="number" name="hasBaseline" id="hasBaseline" size=10 {{ readonlyall }} value="{{priorValue['hasBaseline']}}"></td>
+        </tr>
+        <tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+        	<td><label for="hasThreshold"><span title="Threshold is a minimum or maximum quantity that limits which values an indicator can assume."><b>Threshold:</b></span></label></td>
+        	<td><INPUT type="number" name="hasThreshold" id="hasThreshold" size=10 {{ readonlyall }} value="{{priorValue['hasThreshold']}}"></td>
+        </tr>
+        <tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+        	<td><span title="Defines an optional standard from which the Indicator is sourced.<b>Indicator Standard:"><b>Indicator Standard:</b></span></label></td>
+        	<td><label for="stOrgID"><span title="Organization's unique identifier that issued the standard."></b></span><b>Standard's Organization ID</b></label>
+        	    <INPUT type="text" name="stOrgID" id="stOrgID" size=10 {{ readonlyall }} value="{{priorValue['stOrgID']}}">
+        	    <label for="stHasIdentifier"><span title="Organization unique Indicator identifier."><b>Indicator Unique ID</span></b></label>
+        	    <INPUT type="text" name="stHasIdentifier" id="stHasIdentifier" size=10 {{ readonlyall }} value="{{priorValue['stHasIdentifier']}}">
+        	</td>
+        </tr>
+    </table><p>
+    
+{% if action != "display" %}
+    <INPUT type="submit" value="Submit"> 
+</FORM>
+{% endif %}
+
+{% endblock %}

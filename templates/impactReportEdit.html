@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Common Approach Repository Impact Report Add/Update Page</title>
+{% endblock %}
+  
+{% block body %}
+<center><h1>Common Approach Repository<br> Impact Report Add/Update</h1></center>
+
+<center><b style="color:red;">{{ message }}</b></center>
+
+{% if action == "display" %} 
+	{% set readonlyall = "readonly" %}
+	{% set readonly = "readonly" %}  
+{% else %}
+	{% set readonlyall = "" %}
+{% endif %}
+
+{% if action != "display" %}
+<p>
+<FORM action= {{ path }} method="POST">
+
+	<input type="hidden" name="action" id="action" value="{{action}}">
+	<input type="hidden" name="irIRI" id="irIRI" value="{{priorValue['irIRI']}}">
+{% endif %}
+
+    <table border=0>
+    
+    	<tr>
+			<td><label for="hasName"><span title="Name/title of impact report."> <b>Name:</b></span></label></td>
+			<td><input type="text" name="hasName" id="hasName" size=40  required value="{{priorValue['hasName']}} {{readonlyall}}">
+		</tr>
+		
+		<tr><td  style="padding-top: 10px;"></td></tr>
+		<tr>
+			<td><label for="forOutcome"><span title="Select Outcome being reported on."> <b>Outcome:</b></span></label></td>
+			<td> <select name="forOutcome" id="forOutcome" size=1 required {{ readonlyall }}>
+      			{% for out in impactModel.hasOutcome %}
+        			<option value= "{{ out.iri }}" {% if out.iri == priorValue['forOutcome'] %} "selected" {% endif %}> {{out.hasName}} </option>
+      			{% endfor %}
+   			  </select>
+		</tr>
+			
+		<tr><td  style="padding-top: 10px;"></td></tr>
+    	<tr>
+    	    <td><label for="hasExpectation"><span title="What was the expected impact during this period?"> <b>Expectation:</b></span></label></td>
+    	    <td colspan="6"><textarea name="hasExpectation" id="hasExpectation" rows="4" cols="76" required {{ readonlyall }}> {{ priorValue['hasExpectation'] }}</textarea></td>
+    
+        <tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+        	<td> <span title="Time period for which the report covers."><b>Time Period:</b></span></td>
+        	<td><label for="hasStartDate"><span title="Start Date of the time period for which the report covers.">&nbsp;&nbsp;&nbsp; State Date: </span></label><input type="date" name="hasStartDate" id="hasStartDate" required value="{{priorValue['hasStartDate']}}" {{ readonlyall }}></td>
+        	<td><label for="hasEndDate"><span title="End Date of the time period for which the report covers.">&nbsp;&nbsp;&nbsp; End Date: </span></label><input type="date" name="hasEndDate" id="hasEndDate" required value="{{priorValue['hasEndDate']}}" {{ readonlyall }}></td>
+        </tr>
+        
+        <!-- Start of Scale -->
+        <tr><td  style="padding-top: 30px;"></td></tr>
+        <tr><td colspan="3"><hr></td></tr>
+        <tr>
+        	<td><span title="Scale is the number of people who experienced an outcome. If your outcome indicator is expressed in people, the number here will be the same as indicator report. However, many outcomes are not expressed as a count of people."><b>Scale:</b></span></td>
+        	<td><label for="scaleForIndicator"><span title="Indicator used to measure Scale."><b>Indicator:</b></span></label>
+        	    <select  name="scaleForIndicator" id="scaleForIndicator" size=1 {{readonlyall}}>
+        		  <option value="None">None</option>
+        		  {% for ind in impactModel.hasIndicator %}
+        		  	<option value= "{{ind.iri}}" {% if ind.iri == priorValue['scaleForIndicator'] %} selected {% endif %} > {{ ind.hasName }}</option>
+        		  {% endfor %}
+        		</select>
+        	</td>
+        	<td><label for="scaleValue"><span title="The value of the indicator for Scale."><b>Value:</b></span></label>
+        	<input type="text" name="scaleValue" id="scaleValue" size=15 value="{{priorValue['scaleValue']}}" {{ readonlyall }}></td>
+        <tr><td  style="padding-top: 20px;"></td></tr>
+        <tr>
+        	<td></td>
+        	<td><span title="Counterfactual is the assumed conditions of the stakeholders that would take place without interventions. Counterfactual can be measured or estimated using other data sets.  It should be expressed using the same units and values as the indicator.  "><b>Counterfactual Value:<b></span>
+        	  <input type="text" name="scaleCounterfactualValue" id="scaleCounterfactualValue" size=15 value="{{priorValue['scaleCounterfactualValue']}}" {{ readonlyall }}></td>
+        </tr>
+        <tr>
+        	<td></td>
+        	<td colspan="5"><label for="scaleCounterfactualHasDescription"><span title="Explanation of the Scale Counterfactual."><b>CounterFactual Description:</b></span></label>
+        	    <textarea name="scaleCounterfactualHasDescription" id="scaleCounterfactualHasDescription" cols="48" rows="3" {{ readonlyall }}> {{priorValue['scaleCounterfactualHasDescription']}} </textarea></td>
+        </tr>
+        
+        
+        <!-- Start of Depth -->
+        <tr><td colspan="3"><hr></td></tr>
+        <tr>
+        	<td><span title="Depth is the degree of difference between the assumed condition that would take place without intervention and the condition with interventions implemented on the stakeholders. Depth can be calculated using the measured or estimated counterfactual. "><b>Depth:</b></span></td>
+        	<td><label for="depthForIndicator"><span title="Indicator used to measure Depth."><b>Indicator:</b></span></label>
+        	    <select  name="depthForIndicator" id="depthForIndicator" size=1 {{readonlyall}}>
+        	      <option value="None">None</option>
+        		  {% for ind in impactModel.hasIndicator %}
+        		  	<option value="{{ind.iri}}" {% if ind.iri == priorValue['depthForIndicator'] %} selected {% endif %} > {{ ind.hasName }}</option>
+        		  {% endfor %}
+        		</select>
+        	</td>
+        	<td><label for="depthValue"><span title="The value of the indicator for Depth."><b>Value:</b></span></label>
+        	<input type="text" name="depthValue" id="depthValue" size=15 value="{{priorValue['depthValue']}}" {{ readonlyall }}></td>
+        <tr><td  style="padding-top: 20px;"></td></tr>
+        <tr>
+        	<td></td>
+        	<td><span title="Counterfactual is the assumed conditions of the stakeholders that would take place without interventions. Counterfactual can be measured or estimated using other data sets.  It should be expressed using the same units and values as the indicator.  "><b>Counterfactual Value:<b></span>
+        	  <input type="text" name="depthCounterfactualValue" id="depthCounterfactualValue" size=15 {{ readonlyall }} value="{{priorValue['depthCounterfactualValue']}}"></td>
+        </tr>
+        <tr>
+        	<td></td>
+        	<td colspan="5"><label for="depthCounterfactualHasDescription"><span title="Explanation of the Scale Counterfactual."><b>CounterFactual Description:</b></span></label>
+        	    <textarea name="depthCounterfactualHasDescription" id="depthCounterfactualHasDescription" cols="48" rows="3" {{ readonlyall }}> {{priorValue['depthCounterfactualHasDescription']}}</textarea></td>
+        </tr>
+
+        
+        <!-- Start of Duration -->
+         <tr><td colspan="3"><hr></td></tr>
+        <tr>
+        	<td><span title="Duration is the length of time that a stakeholders experiences an impact from the initial implementation. IMP suggests that this can be classified in a binary way (longterm or short term). This can be measured or estimated. "><b>Duration:</b></span></td>
+        	<td><label for="durationForIndicator"><span title="Indicator used to measure Duration."><b>Indicator:</b></span></label>
+        	    <select  name="durationForIndicator" id="durationForIndicator" size=1 {{readonlyall}}>
+        	      <option value="None">None</option>
+        		  {% for ind in impactModel.hasIndicator %}
+        		  	<option value= "{{ind.iri}}" {% if ind.iri == priorValue['durationForIndicator'] %} selected {% endif %} > {{ ind.hasName }}</option>
+        		  {% endfor %}
+        		</select>
+        	</td>
+        	<td><label for="durationValue"><span title="The value of the indicator for Duration."><b>Value:</b></span></label>
+        	<input type="text" name="durationValue" id="durationValue" size=15 value="{{priorValue['durationValue']}}" {{ readonlyall }}></td>
+        	
+        <tr><td  style="padding-top: 10px;"></td></tr>
+        <tr><td></td>
+        	<td colspan="3"> <span title="Time period for which the duration covers."><b>Time Period:</b></span>
+        	<label for="durationHasStartDate"><span title="State Date of the time period for which the duration spans.">&nbsp;&nbsp;&nbsp; State Date: </span></label><input type="date" name="durationHasStartDate" id="durationHasStartDate" value="{{priorValue['durationHasStartDate']}}" {{ readonlyall }}>
+        	<label for="durationHasEndDate"><span title="End Date of the time period for which the duration spans.">&nbsp;&nbsp;&nbsp; End Date: </span></label><input type="date" name="durationHasEndDate" id="durationHasEndDate" value="{{priorValue['durationHasEndDate']}}" {{ readonlyall }}></td>
+        </tr>
+        
+        <tr><td  style="padding-top: 20px;"></td></tr>
+        <tr>
+        	<td></td>
+        	<td><span title="Counterfactual is the assumed conditions of the stakeholders that would take place without interventions. Counterfactual can be measured or estimated using other data sets.  It should be expressed using the same units and values as the indicator.  "><b>Counterfactual Value:<b></span>
+        	  <input type="text" name="durationCounterfactualValue" id="durationCounterfactualValue" size=15 value="{{priorValue['durationCounterfactualValue']}}" {{ readonlyall }}></td>
+        </tr>
+        <tr>
+        	<td></td>
+        	<td colspan="5"><label for="durationCounterfactualHasDescription"><span title="Explanation of the Duration Counterfactual."><b>CounterFactual Description:</b></span></label>
+        	    <textarea name="durationCounterfactualHasDescription" id="durationCounterfactualHasDescription" cols="48" rows="3" {{ readonlyall }}> {{priorValue['durationCounterfactualHasDescription']}}</textarea></td>
+        </tr>
+        
+        <tr><td colspan="3"><hr></td></tr>
+        <tr><td  style="padding-top: 30px;"></td></tr>
+        <tr>
+        	<td style="text-align:middle"> <label for="hasComment"><span title="Additional comments regarding this report."><b>Comment:</b></span></label></td>
+        	<td colspan="2"><textarea name="hasComment" id="hasComment" rows="4" cols="76" {{ readonlyall }}> {{ priorValue['hasComment'] }}</textarea></td>
+        </tr>
+        
+    </table>
+    
+<p>
+{% if action != "display" %}
+    <INPUT type="submit" value="Submit"> 
+</FORM>
+{% endif %}
+
+{% endblock %}

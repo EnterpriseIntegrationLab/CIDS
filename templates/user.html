@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Common Approach Repository User Registration Page</title>
+{% endblock %}
+  
+{% block body %}
+<center><h1>Common Approach Repository<br> User Registration</h1></center>
+
+<center><b style="color:red;">{{ message }}</b></center>
+
+<h2>Register User</h2>
+<FORM action="http://localhost:5000/AddUser" method="POST">
+    <table border=0>
+        
+        <tr><td><b><span title="The primary contact person responsible for the organization's information in the repository.">Contact Name:</span></b>
+        	    <label for="givenName">First Name:</label>
+        		<INPUT type="text" name="givenName" id="givenName" size=40 STYLE="background-color: #FFF2CC;" value={{ givenNameValue }}>
+        		<label for="familyName">Last Name:</label>
+        		<INPUT type="text" name="familyName" id="familyName" size=40 STYLE="background-color: #FFF2CC;" value={{ familyNameValue }}>
+        </tr>
+        <tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+        	<td><label for="hasEmail"><b>Email:</b></label>
+        		<INPUT type="email" name="hasEmail" id="hasEmail" size=40 STYLE="background-color: #FFF2CC;"  value={{ hasEmailValue }}>
+        	</td>
+        </tr>
+        <tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+          <td>
+          	<label for="hasPassword"><b><span title="Password to be used by user when logging in.">Password:</span></b> </label>
+        	<INPUT type="password" name="hasPassword" id="hasPassword" size=20 STYLE="background-color: #FFF2CC;"><BR>
+          </td>
+        </tr>
+        <tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+        	<td>
+        		<label for="hasPhoneNumber"><b>Phone Number:</b></label>
+        		<INPUT type="tel" name="hasPhoneNumber" id="hasPhoneNumber" size=30 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="nnn-nnn-nnnn" 
+        				STYLE="background-color: #E2EFDA;"  value={{ hasPhoneNumberValue }}>
+        	</td>
+        </tr>
+        <tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+        	<td><label for="orgID"><b><span title="Canada business number.">Business Number:</span></b></label>
+        	<input type="text" name="orgID" id="orgID" size=20  
+        	    {% if  readonly  %}
+        			STYLE="background-color: #FFFFFF;" 
+        		{% else %}
+        			STYLE="background-color: #FFF2CC;" 
+        		{% endif %}
+        		{{ readonly }} 
+        		value={{ orgIDValue }}>
+        </tr>
+        <tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+        	<td>
+        		<label for="userType"><span title="Select the type of user you are adding."><b>User Type</b></span></label>
+        		<select name="userType" id="userType" size=1 STYLE="background-color: #D9E1F2;" value={{ userTypeValue }}>
+        		  <option value="admin">Administrator (can perform all functions for their designated organization)</option>
+        		  <option value="researcher">Researcher (can only perform analysis functions)</option>
+        		  <option value="editor">Editor (can add/remove/edit all information for the organization, except for users)</option>
+        	</td>
+        </tr>
+    </table><p>
+    <INPUT type="submit" value="Submit"> 
+</FORM>
+
+{% endblock %}

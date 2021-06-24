@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Common Approach Repository Impact Model Editing Page</title>
+{% endblock %}
+  
+{% block body %}
+<center><h1>Common Approach Repository<br> Impact Model</h1><p> 
+<b style="color:red;">{{ message }}</b></center></h1>
+
+
+{% if action == "display" %} 
+	{% set readonlyall = "readonly" %}
+	{% set readonly = "readonly" %}  
+{% else %}
+	{% set readonlyall = "" %}
+{% endif %}
+
+
+  {% if action != "display" %}
+    <h2>Register Organization</h2>
+    <FORM action= {{ path }} method="POST">
+    	<input type="hidden" id="action" name="action" value="{{action}}">
+    	<input type="hidden" id="imIRI" name="imIRI" value="{{im.iri}}">
+  {% endif %}
+  
+        <table border=0>
+          <tr>
+        	<td><label for="hasName"><b><span title="Title of Impact Model.">Impact Model Title:</span></b></label></td>
+        	<td><input type="text" name="hasName" id="hasName" size=20 required {{ readonlyall }} value="{{priorValue['hasName']}}"></td>
+          </tr>
+
+          <tr><td  style="padding-top: 10px;"></td></tr>
+          <tr  style="padding-top: 20px;">
+            <td valign="top"><label for="hasDescription"> <b>Description:</b> </label></td>
+        	<td><textarea name="hasDescription" id="hasDescription" rows="4" cols="60" {{ readonlyall }} >{{priorValue['hasDescription']}}</textarea></td>
+          </tr>
+
+		<tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+        	<td><b><label for="impactModelTypeIRI" >Impact Model Type:</label></b></td>
+        	<td><select name="impactModelTypeIRI" id="impactModelTypeIRI" size=1 required  {{ readonlyall }}>
+        	  {% for im in impactModelTypes %}
+        	    <option value="{{im.iri}}" {% if im.iri == priorValue['impactModelTypeIRI'] %} selected {% endif %}> {{ im.label[0] }} </option>
+        	  {% endfor %}
+        	  </select>
+        	</td>
+        </tr>
+        
+	 	<tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+        	<td><b>Stakeholders:</b></td>
+        	<td> 
+        	  <UL>
+        	{% for stk in im.hasStakeholder %}
+        	    <LI><form method="post" action="http://localhost:5000/EditStakeholder"> 
+        	          <input type="hidden" name="stkIRI" value="{{stk.iri}}" />
+        	          <input type="hidden" name="action" value="display" />
+        	          <a href="#" onclick="this.parentNode.submit();"> {{stk.hasName}} </a>
+        	        </form>
+        	    </LI>
+        	{% endfor %}
+        	  </UL>
+        	</td>
+        </tr>
+        
+        <tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+        	<td><b>Outcomes:</b></td>
+        	<td> 
+        	  <UL>
+        	{% for out in im.hasOutcome %}
+        	    <LI><form method="post" action="http://localhost:5000/EditOutcome"> 
+        	          <input type="hidden" name="outIRI" value="{{out.iri}}" />
+        	          <input type="hidden" name="action" value="display" />
+        	          <a href="#" onclick="this.parentNode.submit();"> {{out.hasName}} </a>
+        	        </form>
+        	    </LI>
+        	{% endfor %}
+        	  </UL>
+            </td>
+        </tr>
+        
+        <tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+        	<td><b>Indicators:</b></td>
+        	<td> 
+        	  <UL>
+        	{% for ind in im.hasIndicator %}
+        	    <LI><form method="post" action="http://localhost:5000/EditIndicator"> 
+        	          <input type="hidden" name="indIRI" value="{{ind.iri}}" />
+        	          <input type="hidden" name="action" value="display" />
+        	          <a href="#" onclick="this.parentNode.submit();"> {{ind.hasName}} </a>
+        	        </form>
+        	    </LI>
+        	{% endfor %}
+        	  </UL>
+        	</td>
+        </tr>
+        <tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+		  <td><b>Stakeholder<br>Characteristics:</b></td>
+        	<td> 
+        	  <UL>
+        	{% for stkc in im.hasCharacteristic %}
+        	    <LI><form method="post" action="http://localhost:5000/EditStakeholderCharacteristic"> 
+        	          <input type="hidden" name="stkcIRI" value="{{stkc.iri}}" />
+        	          <input type="hidden" name="action" value="display" />
+        	          <a href="#" onclick="this.parentNode.submit();"> {{stkc.hasName}} </a>
+        	        </form>
+        	    </LI>
+        	{% endfor %}
+        	  </UL>
+        	</td>
+        </tr>
+	</table><p>
+  {% if action != "display" %} 
+        <INPUT type="submit" value="Submit"> 
+    </FORM>
+  {% endif %}
+
+{% endblock %}

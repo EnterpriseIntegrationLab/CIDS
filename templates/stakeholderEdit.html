@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Common Approach Repository Stakeholder Add/Edit Page</title>
+{% endblock %}
+  
+{% block body %}
+<center><h1>Common Approach Repository<br> Stakeholder Add/Edit</h1></center>
+
+
+{% if action == "display" %} 
+	{% set readonlyall = "readonly" %}
+	{% set readonly = "readonly" %}
+	<center><b style="color:red;">{{ message }}</b></center><p>  
+{% else %}
+	{% set readonlyall = "" %}
+{% endif %}
+
+{% if action != "display" %}
+<FORM action="http://localhost:5000/UpdateStakeholder" method="POST">
+
+	<input type="hidden" name="action" id="action" value="{{action}}">
+	<input type="hidden" name="stkIRI" id="stkIRI" value="{{priorValue['stkIRI']}}">
+	
+{% endif %}
+    <table border=0>
+        <tr>
+        	<td><label for="hasName"><b><span title="Short description of Stakeholder. One to five words.">Stakeholder Name:</span></b></label></td>
+        	<td>	<INPUT type="text" name="hasName" id="hasName" size=60  {{ readonly }} required value="{{priorValue['hasName']}}"></td>
+        	</td>
+        </tr>
+    	<tr><td  style="padding-top: 10px;"></td></tr>
+          <tr>
+            <td valign="top"><label for="hasDescription"> <b>Description:</b> </label></td>
+        	<td><textarea name="hasDescription" id="hasDescription" rows="4" cols="60" {{ readonlyall }}>{{priorValue['hasDescription']}}</textarea></td>
+        </tr>
+        <tr><td  style="padding-top: 10px;"></td></tr>
+        <tr>
+        	<td><label for="located_in"><span title="Where Stakeholders are located."><b>Location:</b></span></label>
+        	<td><select name="located_in" id="located_in" size=1 {{ readonlyall }} value="{{priorValue['located_inValue']}}">
+        		  <option value="local" {% if priorValue['located_in'] == "local" %}selected{% endif %}>Local</option>
+        		  <option value="regional" {% if priorValue['located_in'] == "regional" %}selected{% endif %}>Regional</option>
+        		  <option value="provincial" {% if priorValue['located_in'] == "provincial" %}selected{% endif %}>Provincial</option>
+        		  <option value="national" {% if priorValue['located_in'] == "national" %}selected{% endif %}>National</option>
+        		  <option value="multinational" {% if priorValue['located_in'] == "multinational" %}selected{% endif %}>Multinational</option>
+        		  <option value="global" {% if priorValue['located_in'] == "global" %}selected{% endif %}>Global</option>
+        	</td>
+        </tr>
+    </table><p>
+{% if action != "display" %}
+    <INPUT type="submit" value="Submit"> 
+</FORM>
+{% endif %}
+
+{% endblock %}
